@@ -12,7 +12,6 @@ class Solution(object):
         start = 0
         end = len(chars) - 1
 
-        print(chars)
         while (end > start):
             if chars[start] != chars[end]:
                 return False
