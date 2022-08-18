@@ -35,3 +35,17 @@ class Solution(object):
                 largest_diff = max(largest_diff, price - min_so_far)
 
         return largest_diff
+
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        max_sum = -sys.maxsize - 1
+        current_sum = 0
+
+        for num in nums:
+            if current_sum < num:
+                max_sum = max(max_sum, current_sum)
+            else:
+                current_sum += num
+                max_sum = max(max_sum, current_sum)
+        return max_sum

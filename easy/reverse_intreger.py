@@ -12,7 +12,6 @@ class Solution():
         if str(x)[0] == '-':
             temp = str(x)[1:]
 
-        print(temp)
         res = "".join([a for a in temp[::-1]]).lstrip('0')
 
         if str(x)[0] == '-':
@@ -25,4 +24,20 @@ class Solution():
 
 
 sol = Solution()
-print(sol.reverse(123))
+
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def deleteNode(self, node):
+        """
+        :type node: ListNode
+        :rtype: void Do not return anything, modify node in-place instead.
+        """
+
+
+        node = node.next

@@ -10,23 +10,29 @@ class Solution(object):
         :type n: int
         :rtype: ListNode
         """
-
         if head.next is None:
             return None
 
         if not head:
             return head
 
-        count = 0
-        curr_node = head
-        while curr_node:
-            count += 1
-            curr_node = curr_node.next
+        list_length = self.get_list_length(head)
 
-        if count == n:
+        if list_length == n:
             return head.next
 
-        target_index = count - n
+        return self.remove_nth_node(n, list_length, head)
+
+    def get_list_length(self, head):
+        list_length = 0
+        curr_node = head
+        while curr_node:
+            list_length += 1
+            curr_node = curr_node.next
+        return list_length
+
+    def remove_nth_node(self, n, list_length, head):
+        target_index = list_length - n
 
         index = 0
         curr_node = head
@@ -37,6 +43,5 @@ class Solution(object):
 
             index += 1
             curr_node = curr_node.next
-
 
 
